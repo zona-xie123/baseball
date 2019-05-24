@@ -1,0 +1,47 @@
+<p>
+
+        <iframe id="ytplayer" width="640" height="480"
+        
+        src="https://www.youtube.com/embed/djmAMBpSevo?&amp;html5-1&amp;enablejsapi=1&amp;autoplay=1"
+        
+        frameborder="0" allowfullscreen=""></iframe></p>
+        
+        <div id="player">&nbsp;</div>
+        
+        <script>
+        
+         var tag = document.createElement('script');
+        
+            tag.src = "https://www.youtube.com/iframe_api";
+        
+            var firstScriptTag = document.getElementsByTagName('script')[0];
+        
+            firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+        
+            var player;
+        
+            function onYouTubeIframeAPIReady() {
+        
+                player = new YT.Player('ytplayer', {
+        
+                    events: {
+        
+                        'onReady': onPlayerReady
+        
+                    }
+        
+                });
+        
+            }
+        
+        function onPlayerReady() {
+        
+                player.playVideo();
+        
+                // Mute!
+        
+                player.mute();
+        
+            }
+        
+        </script>
